@@ -1,0 +1,55 @@
+<!--this will be the employee salaries template in table using Angular Material-->
+
+<h1>Salaries</h1>
+
+
+<div>
+  <button mat-button class="addSalaries"><mat-icon>add_circle</mat-icon> Add Salaries</button>
+  <input type="text" id="search" placeholder="Search"/>
+</div>
+<br/>
+
+<div class="table-wapper"> 
+  <table mat-table [dataSource]="dataSource" #mytable class="container">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="basicPay">
+      <th mat-header-cell *matHeaderCellDef> Basic Pay </th>
+      <td mat-cell *matCellDef="let element"> {{element.basicPay}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="deductions">
+      <th mat-header-cell *matHeaderCellDef> Deductions </th>
+      <td mat-cell *matCellDef="let element"> {{element.deductions}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="allowance">
+      <th mat-header-cell *matHeaderCellDef> Allowance </th>
+      <td mat-cell *matCellDef="let element"> {{element.allowance}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element" class="action-link"> 
+        <a href="#"><mat-icon>edit</mat-icon></a>
+        <a href="#"><mat-icon>delete</mat-icon></a>  
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+mat-nav-list {
+    a{
+        text-decoration: none;
+        color: #1976d2;
+        font-weight: 500;
+    }
+    a:hover {
+        background-color: #1976d2;
+        color: #fff;
+    }
+    
+    .active {
+        background-color: #619dd8;
+        color: #fff;
+    }
+}
+
+
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}

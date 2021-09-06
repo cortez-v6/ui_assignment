@@ -1,0 +1,62 @@
+<!--this will be the employee salaries template in table using Angular Material-->
+
+<h1>Loans</h1>
+
+
+<div>
+  <button mat-button class="addLoan"><mat-icon>add_circle</mat-icon> Add Loans</button>
+  &nbsp;
+  <button mat-button class="addLoan"><mat-icon>add</mat-icon> Aprove Loans</button><br/>
+  <input type="text" id="search" placeholder="Search"/>
+</div>
+<br/>
+
+<div class="table-wapper"> 
+  <table mat-table [dataSource]="dataSource" #mytable class="container">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="loanType">
+      <th mat-header-cell *matHeaderCellDef> Loan Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.loanType}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="loanAmt">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let element"> {{element.loanAmt}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loanDue">
+      <th mat-header-cell *matHeaderCellDef> Due </th>
+      <td mat-cell *matCellDef="let element"> {{element.loanDue}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="application">
+        <th mat-header-cell *matHeaderCellDef> Application </th>
+        <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deadline">
+        <th mat-header-cell *matHeaderCellDef> Deadline </th>
+        <td mat-cell *matCellDef="let element"> {{element.deadline}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element" class="action-link"> 
+        <a href="#"><mat-icon>edit</mat-icon></a>
+        <a href="#"><mat-icon>delete</mat-icon></a>  
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
