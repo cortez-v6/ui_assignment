@@ -1,0 +1,50 @@
+<!--this will be the employee template in table using Angular Material-->
+
+<h1>Employees</h1>
+
+
+<div>
+  <button mat-button class="addEmployee"><mat-icon>add_circle</mat-icon> Add Employee</button>
+  <input type="text" id="search" placeholder="Search"/>
+</div>
+<br/>
+
+<div class="table-wapper"> 
+  <table mat-table [dataSource]="dataSource" #mytable class="container">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="designation">
+      <th mat-header-cell *matHeaderCellDef> Designation </th>
+      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="joinDate">
+      <th mat-header-cell *matHeaderCellDef> Date of Joining </th>
+      <td mat-cell *matCellDef="let element"> {{element.joinDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element" class="action-link"> 
+        <a href="#"><mat-icon>edit</mat-icon></a>
+        <a href="#"><mat-icon>delete</mat-icon></a>  
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
