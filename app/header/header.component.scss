@@ -1,0 +1,38 @@
+.nav-container {
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.nav-container {
+    a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 20px; 
+        text-decoration: none;
+        font-size: 18px;
+    }
+      
+    a:hover {
+        background-color: #ffffff;
+        color: #1976d2;
+    }
+    .active {
+        background-color: #619dd8;
+    }
+}
+
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-toolbar{
+    border-radius: 4px;
+}
+
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 3px;
+    }
+}

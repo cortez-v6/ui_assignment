@@ -1,0 +1,32 @@
+<mat-toolbar class="nav-container">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <span>Employee & Expense Tracker</span>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout class="navigation-items">
+            <li>
+                <a routerLink="/employees" routerLinkActive="active">Employees</a>
+            </li>
+            <li>
+                <a routerLink="/salaries" routerLinkActive="active">Salaries</a>
+            </li>
+            <li>
+                <a routerLink="/loans" routerLinkActive="active">Loans</a>
+            </li>
+            <li>
+                <a routerLink="/deductions" routerLinkActive="active">Deductions</a>
+            </li>
+            <li>
+                <a routerLink="/expenses" routerLinkActive="active">Expenses</a>
+            </li>
+            <li>
+                <a routerLink="/leave" routerLinkActive="active">Leave</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>
